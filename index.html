@@ -5,120 +5,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 引入修改字体P的样式 -->
-    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\style.css" />
     <!-- <link rel="stylesheet" href="style.css" /> -->
     <title>学无止境的博客</title>
   </head>
   <body>
-    主要盒子
+    <!-- 主要盒子 -->
     <div>
-    <h1 align="center"><b>学无止境的博客</b></h1>
-    <!-- 段落和换行 -->
-    <p>这是一个段落</p>
-    <p>
-      你好<br />
-      这是换行<br />
-    </p>
-    <!-- 字体 -->
-    <p>
-      <strong>strong 标签用于加粗</strong>
-      <b>b 标签用于加粗</b>
+      <span id="skiplinke" style="display: none">
+        == $0
+        <a href="#main">skip to main</a>
+        " | "
+        <a href="#sidebar">skip to sidebar</a>
+      </span>
+      <div id="content-wrapper">
+        <div id="crosscol-wrapper" style="text-align: center">
+          <div class="crosscol no-items section" id="crosscol"></div>
+        </div>
+        <!-- 主要博客 -->
+        <div id="main-wrapper">
+          <div class="main section" id="main">
+            <!-- 头部 -->
+            <div class="widget Header" data-version="1" id="Header1">
+              <div id="header-inner">
+                <div class="titlewrapper">
+                  <h1 class="title">学无止境的博客</h1>
+                </div>
+                <div class="descriptionwrapper">
+                  <p class="description">
+                    "道可道，非常道"
+                    <br />
+                    "名可名，非常名"
+                    <br />
+                  </p>
+                  <hr />
+                </div>
+              </div>
+            </div>
+            <!-- 博客部分 -->
+            <div class="widget Blog" data-version="1" id="Blog1">
+              <!-- 正文部分 -->
+              <div class="blog-posts hfeed">
+                <!-- 连接到其他文章的超链接,要添加的话就复制下面的div盒子 -->
+                <div
+                  class="post hentry uncustomized-post-template"
+                  style="font-size: 100%"
+                >
+                  <a name="0000000001"></a>
+                  <h1 class="post-title entry-content">
+                    <a href="https://www.baidu.com">百度一下</a>
+                  </h1>
+                  <div class="post-header">
+                    <div class="post-header-line-1"></div>
+                  </div>
+                  <div class="post-body entry-content">
+                    <div style="clear: both"></div>
+                  </div>
+                  <div class="post-footer" style="margin-bottom: 50px">
+                    <div
+                      class="post-footer-line post-footer-line1"
+                      style="display: none"
+                    >
+                      <span class="post-author vcard"> </span>
+                      <span class="reaction-buttons"> </span>
+                      <span class="star-ratings"> </span>
+                      <span class="post-icons"> </span>
+                      <span class="post-backlinks post-comment-link"> </span>
+                    </div>
+                    <div
+                      class="post-footer-line post-footer-line2 post-toolbar"
+                    >
+                      <span class="post-timestamp"> 2023年6月23日 </span>
+                      <span class="post-comment-link">
+                        <a class="comment-link" href="https://www.baidu.com"
+                          >520 条评论</a
+                        >
+                      </span>
+                      <span class="post-labels">
+                        "标签: "
+                        <a href="https://www.xueqiu.com" rel="tag">雪球</a>
+                        "， "
+                        <a href="https://www.bilibili.com/" rel="tag">B站</a>
+                        ", "
+                        <a href="https://www.baidu.com" rel="tag">百度</a>
+                      </span>
+                      <span class="post-share-buttons"> </span>
+                    </div>
+                    <div class="post-footer-line post-footer-line3">
+                      <span class="post-location"> </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-      <em>em 标签用于倾斜</em>
-      <i>i 标签用于倾斜</i>
+              <!-- 博客底部 -->
+              <div class="blog-pager" id="blog-pager">
+                <span id="blog-pager-older-link">
+                  <a
+                    class="blog-pager-older-link"
+                    href="https://zqten.github.io/"
+                    id="Blog1_blog-pager-older-link"
+                    title="较旧的博文"
+                    >较旧的博文</a
+                  >
+                </span>
+                <a class="home-link" href="https://zqten.github.io/">主页</a>
+              </div>
 
-      <del>del 标签用于加删除线</del>
-      <s>s 标签用于加删除线</s>
-
-      <ins>ins 标签用于加下划线</ins>
-      <u>u 标签用于加下划线</u>
-    </p>
-    <!-- 图片 -->
-    <p>
-      这是图片
-      <img
-        src="https://pic.616pic.com/bg_w1180/00/00/59/blZXjsNe8c.jpg!/fw/880"
-        alt="中国风简约传统节日端午节背景"
-        width="300"
-      />
-    </p>
-    <!-- 超链接 -->
-    <p><a href="https://www.baidu.com">这是超链接</a></p>
-    <!-- 页面定位 -->
-    <p>
-      <a href="#one">第一集</a>
-      <a href="#two">第二集</a>
-      <a href="#three">第三集</a>
-      <p id="one">
-      第一集剧情 <br>
-      <img
-        src="https://pic.616pic.com/bg_w1180/00/00/59/blZXjsNe8c.jpg!/fw/880"
-        alt="中国风简约传统节日端午节背景"
-        width="300"
-      />
-      </p>
-      <p id="two">
-      第二集剧情 <br>
-      <img
-        src="https://pic.616pic.com/bg_w1180/00/00/59/blZXjsNe8c.jpg!/fw/880"
-        alt="中国风简约传统节日端午节背景"
-        width="300"
-      />
-      </p>
-      <p id="three">
-      第三集剧情 <br>
-      <img
-        src="https://pic.616pic.com/bg_w1180/00/00/59/blZXjsNe8c.jpg!/fw/880"
-        alt="中国风简约传统节日端午节背景"
-        width="300"
-      />
-      </p>
-      </p>
-    <p>
-      <!-- 表格 -->
-      <table align="left" border="1" cellspacing="0" width="500" heigth="300">
-        <thead>
-            <td>姓名</td>
-            <td>年龄</td>
-            <td>性别</td>
-        </thead>
-        <tbody>
-            <tr>
-                <td>张三</td>
-                <td>18</td>
-                <td>男</td>
-            </tr>
-            <tr>
-                <td>李四</td>
-                <td>13</td>
-                <td>男</td>
-            </tr>       
-            <tr>
-                <td>王五</td>
-                <td>16</td>
-                <td>女</td>
-            </tr>
-        </tbody>
-    </table>
-    </p>
-    <!-- 盒子 -->
-    <p>
-    <div>
-      <span>詹姆斯</span>
-      <span>詹姆斯</span>
-      <span>詹姆斯</span>
-     </div>
-  <div>
-      <span>库里</span>
-      <span>库里</span>
-      <span>库里</span>
-     </div>
-  <div>
-      <span>科比</span>
-      <span>科比</span>
-      <span>科比</span>
-     </div>
-     </p>
-  </div>
+              <!-- 底部清除 -->
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+        <!-- 侧边栏 -->
+        <div id="sidebar-wrapper">
+          <div class="sidebar section" id="sidebar">
+            <p>这边是侧边栏</p>
+          </div>
+        </div>
+        <div class="clear">&nbsp;</div>
+      </div>
+    </div>
   </body>
 </html>

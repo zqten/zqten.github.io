@@ -1,4 +1,165 @@
+
+body {
+    margin: 0px;
+    font-size: small;
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+body {
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+div {
+    display: block;
+}
+
+#content-wrapper {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+
+#main {
+    float: left;
+    padding: 0px;
+    width: 67%;
+    font: normal normal 100% 'TrebuchetMS', verdana, sans-serif;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+#sidebar {
+    text-transform: none;
+    background-color: #ffffff;
+    color: #000000;
+    padding-left: 20px;
+    width: 30%;
+    float: right;
+    font: normal normal 100% 'TrebuchetMS', verdana, sans-serif;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 240%;
+    line-height: 125%;
+    padding-left: 0px;
+    text-align: center;
+}
+
+h1 {
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.descriptionwrapper {
+    margin-left: 30px;
+}
+
+.description {
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 0px;
+}
+
 p {
-    color: rgb(48, 131, 48);
-    font-size: 30px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.blog-posts {
+    margin-left: 30px;
+}
+
+.post {
+    padding-left: 0px;
+    margin-bottom: 20px;
+    text-indent: 0px;
+    padding-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #0066ff;
+}
+
+h1.post-title, h1.entry-title {
+    font-size: 160%;
+    font-weight: bold;
+    text-align: left;
+}
+
+a:visited {
+    color: #800080;
+}
+
+.post-footer {
+    margin-left: 0px;
+    font-size: 100%;
+}
+
+.post-timestamp, .post-comment-link, .post-labels {
+    margin-right: 12px;
+}
+
+.post-toolbar {
+    margin-bottom: 30px;
+}
+
+.comment-link {
+    white-space: nowrap;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+.post-share-buttons {
+    position: relative;
+}
+
+.post-share-buttons {
+    margin-top: .5em;
+    vertical-align: middle;
+}
+
+#blog-pager {
+    text-align: center;
+    font-size: 125%;
+    font-weight: bold;
+}
+
+#blog-pager {
+    margin: 1em 0;
+    overflow: hidden;
+}
+
+#blog-pager-older-link {
+    float: right;
+}
+
+div.clear {
+    clear: both;
 }
