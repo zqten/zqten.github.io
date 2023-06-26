@@ -1,0 +1,44 @@
+@charset "utf-8";
+.zhengTiworp .cropwrop #main {
+	padding: 0px;
+	width: 67%;
+	float: left;
+	overflow: hidden;
+	background-color: #E9E9E9;
+	font: normal normal 100 'TrebuchetMS', verdana, sans-serif;
+	word-wrap: break-word;
+	clear: both;
+}
+.zhengTiworp .cropwrop {
+	padding-left: 5px;
+
+}
+.zhengTiworp .cropwrop #sidear {
+	width: 30%;
+	float: right;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding-left: 10px;
+	background-color: #FFFFFF;
+	color: #000000;
+	text-transform: none;
+	font: normal normal 100 'TrebuchetMS', verdana, sans-serif;
+	word-wrap: break-word;
+	
+}
+
+h1 {
+    font-size: 240%;
+    line-height: 125%;
+    padding-left: 0px;
+    text-align: center;
+}
+
+h1 {
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
