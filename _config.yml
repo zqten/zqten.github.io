@@ -102,6 +102,6 @@ theme: landscape
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://zqten.github.io # 替换为你的GitHub仓库的HTTPS URL
+  repo: https://github.com/zqten/zqten.github.io.git # 替换为你的GitHub仓库的HTTPS URL
   branch: main # 或者你希望部署到的分支名，通常是main或gh-pages
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}" # 提交时的消息模板
