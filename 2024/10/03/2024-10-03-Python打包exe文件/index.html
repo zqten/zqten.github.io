@@ -19,12 +19,12 @@
   <meta name="author" content="zqten">
   <meta name="keywords" content="">
   
-    <meta name="description" content="将Python程序打包成可执行文件（.exe）是一种常见的方式，以便在不需要安装Python解释器的情况下在其他计算机上运行它。你可以使用一个称为PyInstaller的工具来完成这个任务。以下是一个简单的步骤，以将你的Python程序打包成.exe文件：   安装PyInstaller： 如果你还没有安装PyInstaller，可以使用以下命令进行安装： 1pip install pyinsta">
+    <meta name="description" content="将Python程序打包成可执行文件（.exe）是一种常见的方式，以便在不需要安装Python解释器的情况下在其他计算机上运行它。你可以使用一个称为PyInstaller的工具来完成这个任务。以下是一个简单的步骤，以将你的Python程序打包成.exe文件：  安装PyInstaller： 如果你还没有安装PyInstaller，可以使用以下命令进行安装： 1pip install pyin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用Python打包exe文件">
 <meta property="og:url" content="http://example.com/2024/10/03/2024-10-03-Python%E6%89%93%E5%8C%85exe%E6%96%87%E4%BB%B6/index.html">
 <meta property="og:site_name" content="学无止境">
-<meta property="og:description" content="将Python程序打包成可执行文件（.exe）是一种常见的方式，以便在不需要安装Python解释器的情况下在其他计算机上运行它。你可以使用一个称为PyInstaller的工具来完成这个任务。以下是一个简单的步骤，以将你的Python程序打包成.exe文件：   安装PyInstaller： 如果你还没有安装PyInstaller，可以使用以下命令进行安装： 1pip install pyinsta">
+<meta property="og:description" content="将Python程序打包成可执行文件（.exe）是一种常见的方式，以便在不需要安装Python解释器的情况下在其他计算机上运行它。你可以使用一个称为PyInstaller的工具来完成这个任务。以下是一个简单的步骤，以将你的Python程序打包成.exe文件：  安装PyInstaller： 如果你还没有安装PyInstaller，可以使用以下命令进行安装： 1pip install pyin">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-10-26T05:36:05.545Z">
@@ -279,73 +279,58 @@
               <div class="markdown-body">
                 
                 <p>将Python程序打包成可执行文件（.exe）是一种常见的方式，以便在不需要安装Python解释器的情况下在其他计算机上运行它。你可以使用一个称为PyInstaller的工具来完成这个任务。以下是一个简单的步骤，以将你的Python程序打包成.exe文件：</p>
-<ol>
-<li>
-<p><strong>安装PyInstaller</strong>：</p>
+<ol type="1">
+<li><p><strong>安装PyInstaller</strong>：</p>
 <p>如果你还没有安装PyInstaller，可以使用以下命令进行安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install pyinstaller<br></code></pre></td></tr></table></figure>
-</li>
-<li>
-<p><strong>在命令行中使用PyInstaller</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install pyinstaller<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>在命令行中使用PyInstaller</strong>：</p>
 <p>打开命令行终端，并导航到你的Python程序所在的目录。然后运行以下命令，将你的Python程序打包成.exe文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pyinstaller --onefile your_program.py<br></code></pre></td></tr></table></figure>
-<p>这里的<code>your_program.py</code>应该是你的Python程序的文件名。<code>--onefile</code>选项将生成一个独立的可执行文件，而不是一堆相关文件。</p>
-</li>
-<li>
-<p><strong>等待打包完成</strong>：</p>
-<p>PyInstaller将开始分析你的Python程序，并将其打包成可执行文件。这可能需要一些时间，具体取决于你的程序的复杂性。</p>
-</li>
-<li>
-<p><strong>找到可执行文件</strong>：</p>
-<p>打包完成后，你可以在<code>dist</code>目录下找到生成的可执行文件。这个文件的名称通常与你的Python脚本的名称相同，但没有.py扩展名。</p>
-</li>
-<li>
-<p><strong>测试可执行文件</strong>：</p>
-<p>运行生成的可执行文件，确保它可以正常工作。</p>
-</li>
+<p>这里的<code>your_program.py</code>应该是你的Python程序的文件名。<code>--onefile</code>选项将生成一个独立的可执行文件，而不是一堆相关文件。</p></li>
+<li><p><strong>等待打包完成</strong>：</p>
+<p>PyInstaller将开始分析你的Python程序，并将其打包成可执行文件。这可能需要一些时间，具体取决于你的程序的复杂性。</p></li>
+<li><p><strong>找到可执行文件</strong>：</p>
+<p>打包完成后，你可以在<code>dist</code>目录下找到生成的可执行文件。这个文件的名称通常与你的Python脚本的名称相同，但没有.py扩展名。</p></li>
+<li><p><strong>测试可执行文件</strong>：</p>
+<p>运行生成的可执行文件，确保它可以正常工作。</p></li>
 </ol>
 <p>请注意，打包Python程序成可执行文件时，可能会导致一些文件路径和资源加载问题，因此确保你的程序中没有依赖于特定文件路径的硬编码。如果你的程序需要访问其他文件，确保这些文件与可执行文件位于同一目录或指定正确的路径。</p>
 <p>这是一个简单的指南，帮助你将Python程序打包成可执行文件。如果你的程序包含了其他依赖项，你可能需要进一步配置PyInstaller以确保这些依赖项也包含在可执行文件中。不过，基本上，你应该能够使用上述步骤来创建一个可执行的.exe文件。</p>
 <p>如果你的Python程序依赖于<code>tkinter</code>和<code>messagebox</code>模块，并且你已经使用PyInstaller将程序打包成可执行文件，通常情况下，这两个依赖应该已经包含在可执行文件中。<code>tkinter</code>是Python的标准库，因此不需要额外的步骤来包含它。<code>messagebox</code>模块通常也是<code>tkinter</code>的一部分。</p>
 <p>当你运行生成的可执行文件时，它应该能够正常使用这两个模块。如果你在打包过程中遇到问题，可以尝试以下方法：</p>
-<ol>
-<li>
-<p><strong>在Python中使用虚拟环境：</strong> 确保在你的项目中使用了虚拟环境。这可以帮助隔离你的项目依赖于系统Python的情况。你可以使用<code>venv</code>模块创建虚拟环境：</p>
+<ol type="1">
+<li><p><strong>在Python中使用虚拟环境：</strong>
+确保在你的项目中使用了虚拟环境。这可以帮助隔离你的项目依赖于系统Python的情况。你可以使用<code>venv</code>模块创建虚拟环境：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">python -m venv venv<br></code></pre></td></tr></table></figure>
-<p>然后在虚拟环境中安装所需的依赖项，包括<code>tkinter</code>和<code>messagebox</code>。</p>
-</li>
-<li>
-<p><strong>在PyInstaller中包含依赖项：</strong> 如果PyInstaller没有正确地包含<code>tkinter</code>和<code>messagebox</code>模块，你可以尝试手动指定它们。在运行PyInstaller时，使用<code>--hidden-import</code>选项指定这些模块：</p>
+<p>然后在虚拟环境中安装所需的依赖项，包括<code>tkinter</code>和<code>messagebox</code>。</p></li>
+<li><p><strong>在PyInstaller中包含依赖项：</strong>
+如果PyInstaller没有正确地包含<code>tkinter</code>和<code>messagebox</code>模块，你可以尝试手动指定它们。在运行PyInstaller时，使用<code>--hidden-import</code>选项指定这些模块：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pyinstaller --onefile --hidden-import=tkinter --hidden-import=tkinter.messagebox your_program.py<br></code></pre></td></tr></table></figure>
-<p>这将强制PyInstaller包含<code>tkinter</code>和<code>messagebox</code>模块。</p>
-</li>
-<li>
-<p><strong>更新PyInstaller：</strong> 确保你正在使用最新版本的PyInstaller。有时，更新到最新版本可以解决依赖项问题。</p>
-</li>
-<li>
-<p><strong>检查打包日志：</strong> 打包过程中，PyInstaller会生成一个详细的日志文件。查看这个日志文件以查找任何有关依赖项问题的信息。通常，日志文件位于<code>dist</code>目录下的<code>.spec</code>文件所指定的位置。</p>
-</li>
+<p>这将强制PyInstaller包含<code>tkinter</code>和<code>messagebox</code>模块。</p></li>
+<li><p><strong>更新PyInstaller：</strong>
+确保你正在使用最新版本的PyInstaller。有时，更新到最新版本可以解决依赖项问题。</p></li>
+<li><p><strong>检查打包日志：</strong>
+打包过程中，PyInstaller会生成一个详细的日志文件。查看这个日志文件以查找任何有关依赖项问题的信息。通常，日志文件位于<code>dist</code>目录下的<code>.spec</code>文件所指定的位置。</p></li>
 </ol>
 <p>根据你的具体情况，上述其中一种方法应该能够帮助你解决依赖项问题，并确保打包后的可执行文件可以正常运行。</p>
 <p>出现终端窗口的问题通常是在使用PyInstaller或类似工具打包时的一个常见情况，特别是在Windows上。这是由于默认情况下，PyInstaller在运行时会创建一个控制台窗口，而不是一个纯粹的GUI窗口。</p>
 <p>要解决这个问题，你可以尝试以下几种方法：</p>
-<ol>
-<li>
-<p><strong>使用<code>--noconsole</code>选项：</strong> 在运行PyInstaller时，可以使用<code>--noconsole</code>选项来阻止创建终端窗口。示例如下：</p>
+<ol type="1">
+<li><p><strong>使用<code>--noconsole</code>选项：</strong>
+在运行PyInstaller时，可以使用<code>--noconsole</code>选项来阻止创建终端窗口。示例如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pyinstaller --onefile --noconsole your_program.py<br></code></pre></td></tr></table></figure>
-<p>这将告诉PyInstaller创建一个没有终端窗口的可执行文件。请注意，这可能会导致在程序崩溃时无法查看错误消息。</p>
-</li>
-<li>
-<p><strong>使用PyInstaller生成.spec文件：</strong> 如果你的应用有复杂的依赖关系或特殊配置，你可以首先生成一个.spec文件，然后手动编辑该文件以指定<code>--noconsole</code>选项。然后使用.spec文件来构建你的可执行文件。</p>
-<p>a. 生成.spec文件：</p>
-   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pyinstaller your_program.py --name your_app_name --onefile --windowed --noconsole --log-level=WARN<br></code></pre></td></tr></table></figure>
-<p>b. 编辑.spec文件：找到.spec文件，搜索<code>console=True</code>并将其更改为<code>console=False</code>。</p>
-<p>c. 使用.spec文件构建可执行文件：</p>
-   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pyinstaller your_app_name.spec<br></code></pre></td></tr></table></figure>
-</li>
-<li>
-<p><strong>使用其他工具：</strong> 除了PyInstaller，还有其他工具，如cx_Freeze和py2exe，可以用于将Python程序打包成可执行文件。你可以尝试使用其中之一，看看是否能够解决终端窗口问题。</p>
-</li>
+<p>这将告诉PyInstaller创建一个没有终端窗口的可执行文件。请注意，这可能会导致在程序崩溃时无法查看错误消息。</p></li>
+<li><p><strong>使用PyInstaller生成.spec文件：</strong>
+如果你的应用有复杂的依赖关系或特殊配置，你可以首先生成一个.spec文件，然后手动编辑该文件以指定<code>--noconsole</code>选项。然后使用.spec文件来构建你的可执行文件。</p>
+<ol type="a">
+<li><p>生成.spec文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pyinstaller your_program.py --name your_app_name --onefile --windowed --noconsole --log-level=WARN<br></code></pre></td></tr></table></figure></li>
+<li><p>编辑.spec文件：找到.spec文件，搜索<code>console=True</code>并将其更改为<code>console=False</code>。</p></li>
+<li><p>使用.spec文件构建可执行文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pyinstaller your_app_name.spec<br></code></pre></td></tr></table></figure></li>
+</ol></li>
+<li><p><strong>使用其他工具：</strong>
+除了PyInstaller，还有其他工具，如cx_Freeze和py2exe，可以用于将Python程序打包成可执行文件。你可以尝试使用其中之一，看看是否能够解决终端窗口问题。</p></li>
 </ol>
 <p>记得备份你的项目文件或.spec文件，以免不小心弄坏了。如果上述方法仍然不能解决问题，可以考虑使用其他工具或查看PyInstaller的文档和社区支持来获取更多帮助。</p>
 
@@ -440,9 +425,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/04/2024-10-04-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="神经网络编程">
+                      <a href="/2024/10/04/2024-10-04-%E7%A5%9E%E7%BB%8F%E5%85%83%E5%AD%A6%E4%B9%A0/" title="神经元学习">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">神经网络编程</span>
+                        <span class="hidden-mobile">神经元学习</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
