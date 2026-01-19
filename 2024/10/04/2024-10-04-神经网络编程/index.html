@@ -19,12 +19,12 @@
   <meta name="author" content="zqten">
   <meta name="keywords" content="">
   
-    <meta name="description" content="神经网络编程 框架代码 神经网络类至少需要3个函数：  初始化函数————设定输入层节点、隐藏层节点和输出层节点的数量、学习率、权重、激活函数 训练————学习给定训练集样本后，优化权重 查询————给定输入，从输出节点给出答案  权重  在输入层与隐藏层之间的链接权重矩阵为\(W_{input-hidden}\)，大小为hidden_nodes乘以input_nodes 在">
+    <meta name="description" content="神经网络编程 框架代码 神经网络类至少需要3个函数：  初始化函数————设定输入层节点、隐藏层节点和输出层节点的数量、学习率、权重、激活函数 训练————学习给定训练集样本后，优化权重 查询————给定输入，从输出节点给出答案  权重  在输入层与隐藏层之间的链接权重矩阵为$W_{input-hidden}$，大小为hidden_nodes乘以input_nodes 在隐藏层与输出层之间的链接权">
 <meta property="og:type" content="article">
 <meta property="og:title" content="神经网络编程">
 <meta property="og:url" content="http://example.com/2024/10/04/2024-10-04-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="学无止境">
-<meta property="og:description" content="神经网络编程 框架代码 神经网络类至少需要3个函数：  初始化函数————设定输入层节点、隐藏层节点和输出层节点的数量、学习率、权重、激活函数 训练————学习给定训练集样本后，优化权重 查询————给定输入，从输出节点给出答案  权重  在输入层与隐藏层之间的链接权重矩阵为\(W_{input-hidden}\)，大小为hidden_nodes乘以input_nodes 在">
+<meta property="og:description" content="神经网络编程 框架代码 神经网络类至少需要3个函数：  初始化函数————设定输入层节点、隐藏层节点和输出层节点的数量、学习率、权重、激活函数 训练————学习给定训练集样本后，优化权重 查询————给定输入，从输出节点给出答案  权重  在输入层与隐藏层之间的链接权重矩阵为$W_{input-hidden}$，大小为hidden_nodes乘以input_nodes 在隐藏层与输出层之间的链接权">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/output_14_1.png">
 <meta property="article:published_time" content="2024-10-03T16:00:00.000Z">
@@ -281,7 +281,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="神经网络编程">神经网络编程</h1>
+                <h1>神经网络编程</h1>
 <h2 id="框架代码">框架代码</h2>
 <p>神经网络类至少需要3个函数：</p>
 <ul>
@@ -291,34 +291,26 @@
 </ul>
 <h2 id="权重">权重</h2>
 <ul>
-<li>在输入层与隐藏层之间的链接权重矩阵为<span
-class="math inline">\(W_{input-hidden}\)</span>，大小为<code>hidden_nodes乘以input_nodes</code></li>
-<li>在隐藏层与输出层之间的链接权重矩阵为<span
-class="math inline">\(W_{hidden-output}\)</span>，大小为<code>outpu_nodes乘以hidden_nodes</code></li>
+<li>在输入层与隐藏层之间的链接权重矩阵为$W_{input-hidden}$，大小为<code>hidden_nodes乘以input_nodes</code></li>
+<li>在隐藏层与输出层之间的链接权重矩阵为$W_{hidden-output}$，大小为<code>outpu_nodes乘以hidden_nodes</code></li>
 </ul>
 <h2 id="查询网络">查询网络</h2>
 <ul>
-<li>链接权重点乘输入层就可以得到隐藏层的输入信号<span
-class="math inline">\(X_{hidden}=W_{input-hidden}\cdot I\)</span></li>
-<li>为了获得从隐藏层节点处出现的信号，使用sigmoid激活函数<span
-class="math inline">\(O_{hidden}=sigmod(X_{hidden})\)</span>,sigmod函数：1/(1+exp(-x))；exp(-x)就是e的-x次方</li>
-<li>同理链接权重点乘隐藏层可以得到输出层的输入信号<span
-class="math inline">\(X_{output}=W_{hidden-output}\cdot H\)</span></li>
+<li>链接权重点乘输入层就可以得到隐藏层的输入信号$X_{hidden}=W_{input-hidden}\cdot I$</li>
+<li>为了获得从隐藏层节点处出现的信号，使用sigmoid激活函数$O_{hidden}=sigmod(X_{hidden})$,sigmod函数：1/(1+exp(-x))；exp(-x)就是e的-x次方</li>
+<li>同理链接权重点乘隐藏层可以得到输出层的输入信号$X_{output}=W_{hidden-output}\cdot H$</li>
 <li>通过将输出层的输入信号带入激活函数得到输出层的输出信号</li>
 </ul>
-<h1 id="训练网络">训练网络</h1>
+<h1>训练网络</h1>
 <ul>
 <li>针对给定的训练样本计算输出</li>
 <li>将计算得到的输出与所需的输出对比，使用差值来指导网络权重的更新</li>
-<li>通过隐藏层节点反向传播误差<span
-class="math inline">\(error_{hidden}=W^T_{hidden-output}\cdot
-error_{output}\)</span> T代表需要转置权重</li>
-<li>更新节点j与其下一层节点k之间链接权重的矩阵表达式<span
-class="math inline">\(\Delta
-W_{j,k}+=\alpha*E_k*sigmoid(O_k)*(1-sigmoid(O_k))\cdot O_j\)</span> &gt;
-<span
-class="math inline">\(\alpha\)</span>是学习率，sigmoid是激活函数，*是普通乘法，<span
-class="math inline">\(\cdot\)</span> 是点乘矩阵点积</li>
+<li>通过隐藏层节点反向传播误差$error_{hidden}=W^T_{hidden-output}\cdot error_{output}$ T代表需要转置权重</li>
+<li>更新节点j与其下一层节点k之间链接权重的矩阵表达式$\Delta W_{j,k}+=\alpha<em>E_k</em>sigmoid(O_k)*(1-sigmoid(O_k))\cdot O_j$
+<blockquote>
+<p>$\alpha$是学习率，sigmoid是激活函数，*是普通乘法，$\cdot$ 是点乘矩阵点积</p>
+</blockquote>
+</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 导入库</span><br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">from</span> scipy.special <span class="hljs-keyword">import</span> expit<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br></code></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 神经网络类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">neuralNetwork</span>:<br>    <span class="hljs-comment"># 初始化神经网络</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, inputnodes, hiddennodes, outputnodes, learningrate</span>):<br>        <span class="hljs-comment"># 初始化输入层、隐藏层、输出层</span><br>        <span class="hljs-variable language_">self</span>.inodes = inputnodes<br>        <span class="hljs-variable language_">self</span>.hnodes = hiddennodes<br>        <span class="hljs-variable language_">self</span>.onodes = outputnodes<br>        <br>        <span class="hljs-comment"># 初始化学习率</span><br>        <span class="hljs-variable language_">self</span>.lr = learningrate<br><br>        <span class="hljs-comment"># 初始化权重参数（输入到隐藏，隐藏到输出）传播时，前面的为列，后面的为行,W表示权重</span><br>        <span class="hljs-comment"># 使用正态分布初始化权重(中心设定为0.0，与下一层节点相关用标准方差表达式，第三个参数是数组形状大小)normal(loc=0.0, scale=1.0, size=None)</span><br>        <span class="hljs-variable language_">self</span>.wih = np.random.normal(<span class="hljs-number">0.0</span>, <span class="hljs-built_in">pow</span>(<span class="hljs-variable language_">self</span>.hnodes, -<span class="hljs-number">0.5</span>),(<span class="hljs-variable language_">self</span>.hnodes, <span class="hljs-variable language_">self</span>.inodes))<br>        <span class="hljs-variable language_">self</span>.who = np.random.normal(<span class="hljs-number">0.0</span>, <span class="hljs-built_in">pow</span>(<span class="hljs-variable language_">self</span>.onodes, -<span class="hljs-number">0.5</span>),(<span class="hljs-variable language_">self</span>.onodes, <span class="hljs-variable language_">self</span>.hnodes))<br><br>        <span class="hljs-comment"># 激活函数，公式为：1 / 1 + e ** x</span><br>        <span class="hljs-variable language_">self</span>.activation_function = <span class="hljs-keyword">lambda</span> x: expit(x)<br><br>        <br>        <span class="hljs-keyword">pass</span><br><br>    <span class="hljs-comment"># 训练神经网络</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">train</span>(<span class="hljs-params">self, inputs_list, targets_list</span>):<br><br>        <span class="hljs-comment"># 转置 2D 数组的行和列</span><br>        inputs = np.array(inputs_list, ndmin=<span class="hljs-number">2</span>).T<br>        targets = np.array(targets_list, ndmin=<span class="hljs-number">2</span>).T<br>        <span class="hljs-comment"># 用点乘获取隐藏层输入信号</span><br>        hidden_inputs = np.dot(<span class="hljs-variable language_">self</span>.wih, inputs)<br>        <span class="hljs-comment"># 通过激活函数获取隐藏层输出信号</span><br>        hidden_outputs = <span class="hljs-variable language_">self</span>.activation_function(hidden_inputs)<br>        <span class="hljs-comment"># 用点乘获取输出层输入信号</span><br>        final_inputs = np.dot(<span class="hljs-variable language_">self</span>.who, hidden_outputs)<br>        <span class="hljs-comment"># 用激活函数获取输出层的输出层信号</span><br>        final_outputs = <span class="hljs-variable language_">self</span>.activation_function(final_inputs)<br><br>        <span class="hljs-comment"># 反向传播--计算误差</span><br>        output_errors = targets - final_outputs<br>        <span class="hljs-comment"># 通过点乘权重获取隐藏层误差</span><br>        hidden_error = np.dot(<span class="hljs-variable language_">self</span>.who.T, output_errors)<br>        <span class="hljs-comment"># 更新输出层和隐藏层的链接权重</span><br>        <span class="hljs-variable language_">self</span>.who += <span class="hljs-variable language_">self</span>.lr * np.dot((output_errors * final_outputs * (<span class="hljs-number">1.0</span> - final_outputs)),np.transpose(hidden_outputs))<br>        <span class="hljs-comment"># 更新隐藏层和输入层的链接权重</span><br>        <span class="hljs-variable language_">self</span>.wih += <span class="hljs-variable language_">self</span>.lr * np.dot((hidden_error * hidden_outputs * (<span class="hljs-number">1.0</span> - hidden_outputs)),np.transpose(inputs))<br>        <span class="hljs-keyword">pass</span><br><br>    <span class="hljs-comment"># 查询神经网络</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">query</span>(<span class="hljs-params">self, inputs_list</span>):<br><br>        <span class="hljs-comment"># 转置 2D 数组的行和列</span><br>        inputs = np.array(inputs_list, ndmin=<span class="hljs-number">2</span>).T<br>        <span class="hljs-comment"># 用点乘获取隐藏层输入信号</span><br>        hidden_inputs = np.dot(<span class="hljs-variable language_">self</span>.wih, inputs)<br>        <span class="hljs-comment"># 通过激活函数获取隐藏层输出信号</span><br>        hidden_outputs = <span class="hljs-variable language_">self</span>.activation_function(hidden_inputs)<br>        <span class="hljs-comment"># 用点乘获取输出层输入信号</span><br>        final_inputs = np.dot(<span class="hljs-variable language_">self</span>.who, hidden_outputs)<br>        <span class="hljs-comment"># 用激活函数获取输出层的输出层信号</span><br>        final_outputs = <span class="hljs-variable language_">self</span>.activation_function(final_inputs)<br>        <span class="hljs-comment"># 返回最终输出</span><br>        <span class="hljs-keyword">return</span> final_outputs<br></code></pre></td></tr></table></figure>
@@ -328,8 +320,9 @@ class="math inline">\(\cdot\)</span> 是点乘矩阵点积</li>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 导入测试数据</span><br>test_data_file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;../GPT神经网络学习/mnist_test.csv&quot;</span>,<span class="hljs-string">&#x27;r&#x27;</span>)<br>test_data_list = test_data_file.readlines()<br>test_data_file.close()<br></code></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 测试神经网络</span><br><span class="hljs-comment"># 创建计分卡</span><br>scorecard = []<br><br><span class="hljs-comment"># 测试模型并计分</span><br><span class="hljs-keyword">for</span> record <span class="hljs-keyword">in</span> test_data_list:<br>    <span class="hljs-comment"># 分割数据</span><br>    all_values = record.split(<span class="hljs-string">&#x27;,&#x27;</span>)<br>    <span class="hljs-comment"># 设置列表的第一列元素为答案</span><br>    correct_label = <span class="hljs-built_in">int</span>(all_values[<span class="hljs-number">0</span>])<br>    <span class="hljs-comment"># 缩放数据</span><br>    inputs = (np.asfarray(all_values[<span class="hljs-number">1</span>:]) / <span class="hljs-number">255.0</span> * <span class="hljs-number">0.99</span>) + <span class="hljs-number">0.01</span><br>    <span class="hljs-comment"># 查询神经网络</span><br>    outputs = n.query(inputs)<br>    <span class="hljs-comment"># 筛选输出的最大值</span><br>    label = np.argmax(outputs)<br>    <span class="hljs-comment"># 添加到计分卡</span><br>    <span class="hljs-keyword">if</span> (label == correct_label):<br>        <span class="hljs-comment"># 列表最大值的下标如果等于列表第一列，那就是正确的</span><br>        scorecard.append(<span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-comment"># 否则就把0添加到计分卡</span><br>        scorecard.append(<span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">pass</span><br>        <br>    <span class="hljs-keyword">pass</span><br>    <br></code></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 显示计分卡分数</span><br>scorecard_array = np.asarray(scorecard)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;测试得分: &quot;</span>, scorecard_array.<span class="hljs-built_in">sum</span>() / scorecard_array.size)<br></code></pre></td></tr></table></figure>
-<pre><code class="hljs">测试得分:  0.975</code></pre>
-<h1 id="识别手写数字">识别手写数字</h1>
+<pre><code class="hljs">测试得分:  0.975
+</code></pre>
+<h1>识别手写数字</h1>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 打开下载的训练和测试集</span><br>training_data_file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;../GPT神经网络学习/mnist_train.csv&quot;</span>,<span class="hljs-string">&#x27;r&#x27;</span>)<br>training_data_list = training_data_file.readlines()<br>training_data_file.close()<br></code></pre></td></tr></table></figure>
 <p>用<code>imshow()</code>函数绘制矩形数组</p>
 <ul>
@@ -338,12 +331,14 @@ class="math inline">\(\cdot\)</span> 是点乘矩阵点积</li>
 <li>绘制数组</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">all_values = training_data_list[<span class="hljs-number">0</span>].split(<span class="hljs-string">&#x27;,&#x27;</span>)<br>image_array = np.asfarray(all_values[<span class="hljs-number">1</span>:]).reshape([<span class="hljs-number">28</span>,<span class="hljs-number">28</span>])<br>plt.imshow(image_array, cmap=<span class="hljs-string">&#x27;Greys&#x27;</span>,interpolation=<span class="hljs-string">&#x27;None&#x27;</span>)<br></code></pre></td></tr></table></figure>
-<pre><code class="hljs">&lt;matplotlib.image.AxesImage at 0x1525b492b10&gt;</code></pre>
-<p>​<br />
-<img src="/img/output_14_1.png" srcset="/img/loading.gif" lazyload alt="png" /> ​</p>
-<h2 id="准备mnist训练数据">准备MNIST训练数据</h2>
+<pre><code class="hljs">&lt;matplotlib.image.AxesImage at 0x1525b492b10&gt;
+</code></pre>
+<p>​<br>
+<img src="/img/output_14_1.png" srcset="/img/loading.gif" lazyload alt="png"><br>
+​</p>
+<h2 id="准备MNIST训练数据">准备MNIST训练数据</h2>
 <ul>
-<li>将数据的范围缩小到0.01--0.99</li>
+<li>将数据的范围缩小到0.01–0.99</li>
 <li>因为是训练识别数字，我们的输出层节点应该有10个，输入层为数据的节点784个，隐藏层不好设置，可以先默认为100个</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 缩放数据为 0.01 到 1.00之间</span><br>scaled_input = (np.asfarray(all_values[<span class="hljs-number">1</span>:]) / <span class="hljs-number">255.0</span> * <span class="hljs-number">0.99</span>) + <span class="hljs-number">0.01</span><br><span class="hljs-comment"># print(scaled_input)</span><br><br><span class="hljs-comment"># 设置输出层节点，并设置数据标签为训练目标，也就是正确答案</span><br>onodes = <span class="hljs-number">10</span><br>targets = np.zeros(onodes) + <span class="hljs-number">0.01</span><br>targets[<span class="hljs-built_in">int</span>(all_values[<span class="hljs-number">0</span>])] = <span class="hljs-number">0.99</span><br></code></pre></td></tr></table></figure>
@@ -443,9 +438,9 @@ class="math inline">\(\cdot\)</span> 是点乘矩阵点积</li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/04/2024-10-04-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="人工智能学习笔记">
+                      <a href="/2024/10/04/2024-10-04-%E7%A5%9E%E7%BB%8F%E5%85%83%E5%AD%A6%E4%B9%A0/" title="神经元学习">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">人工智能学习笔记</span>
+                        <span class="hidden-mobile">神经元学习</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
